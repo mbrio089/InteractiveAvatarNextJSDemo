@@ -294,9 +294,9 @@ export default function InteractiveAvatar() {
             <Spinner color="default" size="lg" />
           )}
         </CardBody>
-        <Divider />
+        {/* <Divider /> */}
         <CardFooter className="flex flex-col gap-3 relative">
-          <Tabs
+          {/* <Tabs
             aria-label="Options"
             selectedKey={chatMode}
             onSelectionChange={(v) => {
@@ -305,8 +305,8 @@ export default function InteractiveAvatar() {
           >
             <Tab key="text_mode" title="Text" />
             <Tab key="voice_mode" title="Sprache" />
-          </Tabs>
-          {chatMode === "text_mode" ? (
+          </Tabs> */}
+          {/* {chatMode === "text_mode" ? (
             <div className="w-full flex relative">
               <InteractiveAvatarTextInput
                 disabled={!stream}
@@ -332,7 +332,19 @@ export default function InteractiveAvatar() {
                 {isUserTalking ? "Listening" : "Voice chat"}
               </Button>
             </div>
-          )}
+          )} */}
+          <div className="w-full text-center">
+            {stream && (
+              <Button
+                isDisabled={!isUserTalking}
+                className="bg-dc-blue text-white"
+                size="md"
+                variant="shadow"
+              >
+                {isUserTalking ? "Hört zu..." : "Bitte sprechen Sie"}
+              </Button>
+            )}
+          </div>
         </CardFooter>
       </Card>
       {/* <p className="font-mono text-right">
