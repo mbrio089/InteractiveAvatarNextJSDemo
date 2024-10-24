@@ -19,13 +19,13 @@ export default function NavBar() {
         </Link>
         <div className="bg-gradient-to-br from-sky-300 to-indigo-500 bg-clip-text ml-4">
           <p className="text-xl font-semibold text-transparent">
-            HeyGen Interactive Avatar SDK NextJS Demo
+            digit.cologne
           </p>
         </div>
       </NavbarBrand>
       <NavbarContent justify="center">
         <NavbarItem className="flex flex-row items-center gap-4">
-          <Link
+          {/* <Link
             isExternal
             color="foreground"
             href="https://app.heygen.com/interactive-avatar"
@@ -61,7 +61,7 @@ export default function NavBar() {
           >
             <GithubIcon className="text-default-500" />
             SDK
-          </Link>
+          </Link> */}
           <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>

@@ -31,8 +31,8 @@ export default function InteractiveAvatar() {
   const [stream, setStream] = useState<MediaStream>();
   const [debug, setDebug] = useState<string>();
   const [knowledgeId, setKnowledgeId] = useState<string>("");
-  const [avatarId, setAvatarId] = useState<string>("");
-  const [language, setLanguage] = useState<string>('en');
+  const [avatarId, setAvatarId] = useState<string>("5e1500ee1afe41e8bdb444d5ffd341f1");
+  const [language, setLanguage] = useState<string>('de');
 
   const [data, setData] = useState<StartAvatarResponse>();
   const [text, setText] = useState<string>("");
@@ -181,7 +181,7 @@ export default function InteractiveAvatar() {
       <Card>
         <CardBody className="h-[500px] flex flex-col justify-center items-center">
           {stream ? (
-            <div className="h-[500px] w-[900px] justify-center items-center flex rounded-lg overflow-hidden">
+            <div className="h-[500px] w-[800px] justify-center items-center flex rounded-lg overflow-hidden">
               <video
                 ref={mediaStream}
                 autoPlay
@@ -215,7 +215,7 @@ export default function InteractiveAvatar() {
             </div>
           ) : !isLoadingSession ? (
             <div className="h-full justify-center items-center flex flex-col gap-8 w-[500px] self-center">
-              <div className="flex flex-col gap-2 w-full">
+              {/* <div className="flex flex-col gap-2 w-full">
                 <p className="text-sm font-medium leading-none">
                   Custom Knowledge ID (optional)
                 </p>
@@ -263,6 +263,11 @@ export default function InteractiveAvatar() {
                     </SelectItem>
                   ))}
                 </Select>
+              </div> */}
+              <div>
+                Interaktiver KI Kundentrainer
+                <br></br>
+                powered by digit.cologne
               </div>
               <Button
                 className="bg-gradient-to-tr from-indigo-500 to-indigo-300 w-full text-white"
@@ -270,7 +275,7 @@ export default function InteractiveAvatar() {
                 variant="shadow"
                 onClick={startSession}
               >
-                Start session
+                Session starten
               </Button>
             </div>
           ) : (
@@ -286,8 +291,8 @@ export default function InteractiveAvatar() {
               handleChangeChatMode(v);
             }}
           >
-            <Tab key="text_mode" title="Text mode" />
-            <Tab key="voice_mode" title="Voice mode" />
+            <Tab key="text_mode" title="Text" />
+            <Tab key="voice_mode" title="Sprache" />
           </Tabs>
           {chatMode === "text_mode" ? (
             <div className="w-full flex relative">
@@ -296,7 +301,7 @@ export default function InteractiveAvatar() {
                 input={text}
                 label="Chat"
                 loading={isLoadingRepeat}
-                placeholder="Type something for the avatar to respond"
+                placeholder="Schreiben Sie eine Nachricht..."
                 setInput={setText}
                 onSubmit={handleSpeak}
               />
@@ -318,11 +323,11 @@ export default function InteractiveAvatar() {
           )}
         </CardFooter>
       </Card>
-      <p className="font-mono text-right">
+      {/* <p className="font-mono text-right">
         <span className="font-bold">Console:</span>
         <br />
         {debug}
-      </p>
+      </p> */}
     </div>
   );
 }
