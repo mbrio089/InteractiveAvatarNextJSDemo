@@ -4,6 +4,7 @@ import StreamingAvatar, {
   AvatarQuality,
   StreamingEvents, TaskMode, TaskType, VoiceEmotion,
 } from "@heygen/streaming-avatar";
+
 import {
   Button,
   Card,
@@ -18,12 +19,15 @@ import {
   Tabs,
   Tab,
 } from "@nextui-org/react";
+
 import { useEffect, useRef, useState } from "react";
+
 import { useMemoizedFn, usePrevious } from "ahooks";
 
 import InteractiveAvatarTextInput from "./InteractiveAvatarTextInput";
 
 import { AVATARS, STT_LANGUAGE_LIST } from "@/app/lib/constants";
+
 import { HeyGenLogo } from "./Icons";
 
 
