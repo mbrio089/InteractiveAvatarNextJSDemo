@@ -1,11 +1,9 @@
 import "@/styles/globals.css";
 import clsx from "clsx";
 import { Metadata, Viewport } from "next";
-
-import { Providers } from "./providers";
-
 import { Fira_Code as FontMono, Inter as FontSans } from "next/font/google";
-import NavBar from "@/components/NavBar";
+import { Providers } from "./providers";
+// import NavBar from "@/components/NavBar";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -19,7 +17,7 @@ const fontMono = FontMono({
 
 export const metadata: Metadata = {
   title: {
-    default: "HeyGen Interactive Avatar SDK Demo",
+    default: "digit.cologne  - AI",
     template: `%s - HeyGen Interactive Avatar SDK Demo`,
   },
   icons: {

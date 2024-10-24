@@ -1,8 +1,13 @@
 import type { StartAvatarResponse } from "@heygen/streaming-avatar";
 
+import { HeyGenLogo } from "./Icons";
+
 import StreamingAvatar, {
   AvatarQuality,
-  StreamingEvents, TaskMode, TaskType, VoiceEmotion,
+  StreamingEvents,
+  TaskMode,
+  TaskType,
+  VoiceEmotion,
 } from "@heygen/streaming-avatar";
 
 import {
@@ -11,9 +16,9 @@ import {
   CardBody,
   CardFooter,
   Divider,
-  Input,
-  Select,
-  SelectItem,
+  // Input,
+  // Select,
+  // SelectItem,
   Spinner,
   Chip,
   Tabs,
@@ -26,10 +31,7 @@ import { useMemoizedFn, usePrevious } from "ahooks";
 
 import InteractiveAvatarTextInput from "./InteractiveAvatarTextInput";
 
-import { AVATARS, STT_LANGUAGE_LIST } from "@/app/lib/constants";
-
-import { HeyGenLogo } from "./Icons";
-
+// import { AVATARS, STT_LANGUAGE_LIST } from "@/app/lib/constants";
 
 export default function InteractiveAvatar() {
   const [isLoadingSession, setIsLoadingSession] = useState(false);
@@ -38,7 +40,7 @@ export default function InteractiveAvatar() {
   const [debug, setDebug] = useState<string>();
   const [knowledgeId, setKnowledgeId] = useState<string>("");
   const [avatarId, setAvatarId] = useState<string>("5e1500ee1afe41e8bdb444d5ffd341f1");
-  const [language, setLanguage] = useState<string>('de');
+  const [language, setLanguage] = useState<string>("de");
 
   const [data, setData] = useState<StartAvatarResponse>();
   const [text, setText] = useState<string>("");
@@ -275,8 +277,11 @@ export default function InteractiveAvatar() {
                 Interaktiver Avatar 'Sparkassen-App'
               </div>
               <div className="text-sm text-center">
-                Ein Prototyp der <a href="https://digit.cologne/" target="_blank">digit.cologne GmbH</a><br></br>
-              <br></br>
+                Ein Prototyp der {" "}
+                <a href="https://digit.cologne/" target="_blank" rel="noreferrer">
+                  digit.cologne GmbH
+                </a>{" "}<br></br>
+                <br></br>
                 Telefon:  +49 (0) 151 1420 2357<br></br>
                 Email: <a href="mailto:info@digit.cologne"> info@digit.cologne</a>
               </div>
