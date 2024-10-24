@@ -23,7 +23,9 @@ import { useMemoizedFn, usePrevious } from "ahooks";
 
 import InteractiveAvatarTextInput from "./InteractiveAvatarTextInput";
 
-import {AVATARS, STT_LANGUAGE_LIST} from "@/app/lib/constants";
+import { AVATARS, STT_LANGUAGE_LIST } from "@/app/lib/constants";
+import { HeyGenLogo } from "./Icons";
+
 
 export default function InteractiveAvatar() {
   const [isLoadingSession, setIsLoadingSession] = useState(false);
@@ -196,20 +198,20 @@ export default function InteractiveAvatar() {
               </video>
               <div className="flex flex-col gap-2 absolute bottom-3 right-3">
                 <Button
-                  className="bg-gradient-to-tr from-indigo-500 to-indigo-300 text-white rounded-lg"
-                  size="md"
+                  className="bg-dc-blue text-white rounded-lg"
+                  size="sm"
                   variant="shadow"
                   onClick={handleInterrupt}
                 >
-                  Interrupt task
+                  Antwort abbrechen
                 </Button>
                 <Button
-                  className="bg-gradient-to-tr from-indigo-500 to-indigo-300  text-white rounded-lg"
-                  size="md"
+                  className="bg-dc-blue text-white rounded-lg"
+                  size="sm"
                   variant="shadow"
                   onClick={endSession}
                 >
-                  End session
+                  Session beenden
                 </Button>
               </div>
             </div>
@@ -264,13 +266,18 @@ export default function InteractiveAvatar() {
                   ))}
                 </Select>
               </div> */}
-              <div>
-                Interaktiver KI Kundentrainer
-                <br></br>
-                powered by digit.cologne
+              <HeyGenLogo />
+              <div className="font-bold text-lg">
+                Interaktiver Avatar 'Sparkassen-App'
+              </div>
+              <div className="text-sm text-center">
+                Ein Prototyp der <a href="https://digit.cologne/">digit.cologne GmbH</a><br></br>
+              <br></br>
+                Telefon:  +49 (0) 151 1420 2357<br></br>
+                Email: <a href="mailto:info@digit.cologne"> info@digit.cologne</a>
               </div>
               <Button
-                className="bg-gradient-to-tr from-indigo-500 to-indigo-300 w-full text-white"
+                className="bg-dc-blue w-1/2 text-white"
                 size="md"
                 variant="shadow"
                 onClick={startSession}
@@ -306,14 +313,14 @@ export default function InteractiveAvatar() {
                 onSubmit={handleSpeak}
               />
               {text && (
-                <Chip className="absolute right-16 top-3">Listening</Chip>
+                <Chip className="absolute right-16 top-3">Hört zu...</Chip>
               )}
             </div>
           ) : (
             <div className="w-full text-center">
               <Button
                 isDisabled={!isUserTalking}
-                className="bg-gradient-to-tr from-indigo-500 to-indigo-300 text-white"
+                className="bg-dc-blue text-white"
                 size="md"
                 variant="shadow"
               >
