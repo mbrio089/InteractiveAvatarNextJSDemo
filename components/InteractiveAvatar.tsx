@@ -3,11 +3,7 @@ import type { StartAvatarResponse } from "@heygen/streaming-avatar";
 import { HeyGenLogo } from "./Icons";
 
 import StreamingAvatar, {
-  AvatarQuality,
-  StreamingEvents,
-  TaskMode,
-  TaskType,
-  VoiceEmotion,
+  AvatarQuality, StreamingEvents, TaskMode, TaskType, VoiceEmotion,
 } from "@heygen/streaming-avatar";
 
 import {
