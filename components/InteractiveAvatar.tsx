@@ -275,7 +275,7 @@ export default function InteractiveAvatar() {
                 Interaktiver Avatar 'Sparkassen-App'
               </div>
               <div className="text-sm text-center">
-                Ein Prototyp der <a href="https://digit.cologne/">digit.cologne GmbH</a><br></br>
+                Ein Prototyp der <a href="https://digit.cologne/" target="_blank">digit.cologne GmbH</a><br></br>
               <br></br>
                 Telefon:  +49 (0) 151 1420 2357<br></br>
                 Email: <a href="mailto:info@digit.cologne"> info@digit.cologne</a>
