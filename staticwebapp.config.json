@@ -1,0 +1,7 @@
+{
+    "globalHeaders": {
+      "Access-Control-Allow-Origin": "https://digit.cologne",
+      "Access-Control-Allow-Methods": "GET, OPTIONS, PATCH, DELETE, POST, PUT",
+      "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Authorization"
+    }
+  }
