@@ -12,9 +12,9 @@ import {
   CardBody,
   CardFooter,
   Divider,
-  // Input,
-  // Select,
-  // SelectItem,
+  Input,
+  Select,
+  SelectItem,
   Spinner,
   Chip,
   Tabs,
@@ -27,7 +27,7 @@ import { useMemoizedFn, usePrevious } from "ahooks";
 
 import InteractiveAvatarTextInput from "./InteractiveAvatarTextInput";
 
-// import { AVATARS, STT_LANGUAGE_LIST } from "@/app/lib/constants";
+import { AVATARS, STT_LANGUAGE_LIST } from "@/app/lib/constants";
 
 export default function InteractiveAvatar() {
   const [isLoadingSession, setIsLoadingSession] = useState(false);
@@ -219,8 +219,8 @@ export default function InteractiveAvatar() {
             </div>
           ) : !isLoadingSession ? (
             <div className="h-full justify-center items-center flex flex-col gap-8 w-[500px] self-center">
-              {/* <div className="flex flex-col gap-2 w-full">
-                <p className="text-sm font-medium leading-none">
+              <div className="flex flex-col gap-2 w-full">
+                {/* <p className="text-sm font-medium leading-none">
                   Custom Knowledge ID (optional)
                 </p>
                 <Input
@@ -251,8 +251,8 @@ export default function InteractiveAvatar() {
                       {avatar.name}
                     </SelectItem>
                   ))}
-                </Select>
-                <Select
+                </Select> */}
+                {/* <Select
                   label="Select language"
                   placeholder="Select language"
                   className="max-w-xs"
@@ -266,8 +266,8 @@ export default function InteractiveAvatar() {
                       {lang.label}
                     </SelectItem>
                   ))}
-                </Select>
-              </div> */}
+                </Select> */}
+              </div>
               <HeyGenLogo />
               <div className="font-bold text-lg">
                 Interaktiver Avatar 'Sparkassen-App'
@@ -276,14 +276,30 @@ export default function InteractiveAvatar() {
                 Ein Prototyp der {" "}
                 <a href="https://digit.cologne/" target="_blank" rel="noreferrer">
                   digit.cologne GmbH
-                </a>{" "}<br></br>
+                </a>{" "}
+                {/* <br></br>
                 <br></br>
                 Telefon:  +49 (0) 151 1420 2357<br></br>
-                Email: <a href="mailto:info@digit.cologne"> info@digit.cologne</a>
+                Email: <a href="mailto:info@digit.cologne"> info@digit.cologne</a> */}
               </div>
+              <Select
+                  label="Wählen Sie eine Sprache"
+                  placeholder="Wählen Sie eine Sprache"
+                  className="w-1/2 text-white"
+                  selectedKeys={[language]}
+                  onChange={(e) => {
+                    setLanguage(e.target.value);
+                  }}
+                >
+                  {STT_LANGUAGE_LIST.map((lang) => (
+                    <SelectItem key={lang.key}>
+                      {lang.label}
+                    </SelectItem>
+                  ))}
+                </Select>
               <Button
                 className="bg-dc-blue w-1/2 text-white"
-                size="md"
+                size="lg"
                 variant="shadow"
                 onClick={startSession}
               >
